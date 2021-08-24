@@ -81,7 +81,7 @@ py==1.4.12
 python-termstyle==0.1.10
 readline==6.2.4.1
 rednose==0.3.3
-SQLAlchemy==0.7.9
+
 twill==0.9
 virtualenv==1.8.2
 Werkzeug==0.8.3
