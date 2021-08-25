@@ -28,9 +28,9 @@ idna==2.10
 importlib-metadata==4.5.0
 ipython==7.24.1
 ipython-genutils==0.2.0
-itsdangerous==0.24
+
 jedi==0.18.0
-Jinja2==2.10
+
 MarkupSafe==1.1.1
 matplotlib-inline==0.1.2
 oauthlib==3.1.1
@@ -54,7 +54,7 @@ typing-extensions==3.10.0.0
 urllib3==1.26.5
 virtualenv==20.4.7
 wcwidth==0.2.5
-Werkzeug==0.14.1
+
 WTForms==2.2.1
 yarg==0.1.9
 zipp==3.4.1
@@ -81,8 +81,7 @@ py==1.4.12
 python-termstyle==0.1.10
 readline==6.2.4.1
 rednose==0.3.3
-SQLAlchemy==0.7.9
+
 twill==0.9
-virtualenv==1.8.2
+
 Werkzeug==0.8.3
-WTForms==1.0.2
