@@ -87,7 +87,6 @@ rednose==0.3.3
 twill==0.9
 
 Werkzeug==0.8.3
-<<<<<<< HEAD
-=======
+
 WTForms==1.0.2
->>>>>>> 0c9c9d11c75bfcb0fe38fd4d7d338b5e900f8a8a
+
