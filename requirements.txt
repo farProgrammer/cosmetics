@@ -55,11 +55,9 @@ urllib3==1.26.5
 
 wcwidth==0.2.5
 
-<<<<<<< HEAD
-WTForms==2.2.1
-=======
 
->>>>>>> 0c9c9d11c75bfcb0fe38fd4d7d338b5e900f8a8a
+WTForms==2.2.1
+
 yarg==0.1.9
 zipp==3.4.1
 
