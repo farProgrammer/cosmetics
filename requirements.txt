@@ -88,5 +88,5 @@ twill==0.9
 
 Werkzeug==0.8.3
 
-WTForms==1.0.2
+
 
