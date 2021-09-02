@@ -15,7 +15,7 @@ from sqlalchemy import func
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import check_password_hash, generate_password_hash
 # from werkzeug.utils import secure_filename
-
+# 
 from forms import AddProductForm, EditProductForm
 from models import  db, connect_db, Product,RegForm
 from flask_bootstrap import Bootstrap
