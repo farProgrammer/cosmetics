@@ -2,23 +2,25 @@
 
 import os
 import re
-from sqlalchemy import func
+
 import psycopg2  # pip install psycopg2
 import psycopg2.extras
 import requests
 from flask import (Flask, abort, flash, g, jsonify, redirect, render_template,
                    request, session, url_for)
-
+from flask_bootstrap import Bootstrap
 from flask_debugtoolbar import DebugToolbarExtension
 from flask_wtf import FlaskForm
 from sqlalchemy import func
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import check_password_hash, generate_password_hash
+from werkzeug.utils import secure_filename
+
 # from werkzeug.utils import secure_filename
 # 
 from forms import AddProductForm, EditProductForm
-from models import  db, connect_db, Product,RegForm
-from flask_bootstrap import Bootstrap
+from models import Product, RegForm, connect_db, db
+
 # from google.colab import files 
 
 CURR_USER_KEY = "curr_user"
@@ -54,8 +56,8 @@ db.create_all()
 
  
 
-# def allowed_file(filename):
-#     return '.' in filename and filename.rsplit('.',1)[1].lower() in ALLOWED_EXTENSIONS
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.',1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 
@@ -94,27 +96,27 @@ def favorite():
 
 
 
-# @app.route('/',methods=['POST'])
-# def upload_image():
-#     if 'file' not in request.files:
-#         flash('No file part')
-#         return redirect(request.url)
-#     file=request.files['file']
-#     if file.filename == '':
-#         flash('No image selected for uploading')
-#         return redirect (request.url)
-#     if file and allowed_file(file.filename):
-#         filename =secure_filename(file.filename)
-#         file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-#         flash('Image successfully uploaded and displayed below')
-#         return render_template('buy_product.html',filename=filename)
-#     else:
-#         flash('Allowed image types are - png,jpg,jpeg,gif')
-#         return redirect (request.url)
+@app.route('/',methods=['POST'])
+def upload_image():
+     if 'file' not in request.files:
+         flash('No file part')
+         return redirect(request.url)
+     file=request.files['file']
+     if file.filename == '':
+         flash('No image selected for uploading')
+         return redirect (request.url)
+     if file and  allowed_file(file.filename):
+        filename =secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+        flash('Image successfully uploaded and displayed below')
+        return render_template('buy_product.html',filename=filename)
+     else:
+         flash('Allowed image types are - png,jpg,jpeg,gif')
+         return redirect (request.url)
         
-# @app.route('/display/<filename>')
-# def display_image(filename):
-#     return redirect (url_for('static',filename='buy_products/'+ filename),code=301)
+@app.route('/display/<filename>')
+def display_image(filename):
+     return redirect (url_for('static',filename='buy_products/'+ filename),code=301)
     
 
 @app.route('/process', methods=['POST'])
