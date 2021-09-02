@@ -20,7 +20,6 @@ from forms import AddProductForm, EditProductForm
 from models import  db, connect_db, Product,RegForm
 from flask_bootstrap import Bootstrap
 
-
 CURR_USER_KEY = "curr_user"
 
 API_BASE_URL = "http://makeup-api.herokuapp.com/"
