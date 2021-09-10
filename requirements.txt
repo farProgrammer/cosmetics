@@ -23,6 +23,7 @@ charset-normalizer==2.0.3
 click==6.7
 colorama==0.4.4
 cryptography==3.4.7
+Cython==0.29.24
 decorator==4.4.2
 defusedxml==0.7.1
 dig==0.1.10
@@ -131,7 +132,8 @@ python-dateutil==2.8.2
 python-dotenv==0.17.1
 python-twitter==3.5
 pytz==2016.10
-
+pywin32==301
+pywin32-ctypes==0.2.0
 PyYAML==5.4.1
 pyzmq==22.2.1
 regex==2020.11.13
